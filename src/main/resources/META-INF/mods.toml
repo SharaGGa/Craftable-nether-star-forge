@@ -1,0 +1,33 @@
+modLoader="javafml"
+
+loaderVersion="[40,)"
+
+license="CC0-1.0"
+
+[[mods]]
+
+modId="craftnstar"
+
+version="${file.jarVersion}"
+
+displayName="Craftable nether star"
+
+logoFile="icon.png"
+
+authors="bangtothepow940; Nero"
+
+description='''A mod that simply adds a recipe for nether star'''
+
+[[dependencies.craftnstar]]
+    modId="forge"
+    mandatory=true
+    versionRange="[40,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.craftnstar]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2,1.19)"
+    ordering="NONE"
+    side="BOTH"

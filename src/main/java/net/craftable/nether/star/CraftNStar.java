@@ -1,18 +1,54 @@
 package net.craftable.nether.star;
 
-import net.minecraft.util.registry.Registry;
+import com.mojang.logging.LogUtils;
+import net.craftable.nether.star.item.ModItems;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.slf4j.Logger;
 
-import net.fabricmc.api.ModInitializer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.Identifier;
+import java.util.stream.Collectors;
 
-public class CraftNStar implements ModInitializer {
 
-    public static final Item FORGOTTEN_SHARD = new Item(new Item.Settings().group(ItemGroup.MISC));
+@Mod("craftnstar")
+public class CraftNStar
+{
+    // Directly reference a slf4j logger
+    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final String MOD_ID = "craftnstar";
 
-    @Override
-    public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("craftnstar", "forgotten_shard"), FORGOTTEN_SHARD);
+    public CraftNStar()
+    {
+        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModItems.register(eventBus);
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+
+
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event)
+    {
+
+    }
+
+ @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents
+    {
+        @SubscribeEvent
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent)
+        {
+
+        }
     }
 }
