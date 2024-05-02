@@ -10,7 +10,7 @@ modId="craftnstar"
 
 version="${file.jarVersion}"
 
-displayName="Craftable nether star"
+displayName="Craftable nether star reforged"
 
 logoFile="icon.png"
 
