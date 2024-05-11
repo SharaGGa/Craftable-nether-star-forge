@@ -28,6 +28,6 @@ description='''A mod that simply adds a recipe for nether star'''
 [[dependencies.craftnstar]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.2,1.19)"
+    versionRange="[1.20.1,1.21)"
     ordering="NONE"
     side="BOTH"
