@@ -1,6 +1,6 @@
 modLoader="javafml"
 
-loaderVersion="[40,)"
+loaderVersion="[47,)"
 
 license="CC0-1.0"
 
@@ -21,7 +21,7 @@ description='''A mod that simply adds a recipe for nether star'''
 [[dependencies.craftnstar]]
     modId="forge"
     mandatory=true
-    versionRange="[40,)"
+    versionRange="[47,)"
     ordering="NONE"
     side="BOTH"
 
